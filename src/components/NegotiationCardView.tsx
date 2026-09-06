@@ -25,119 +25,152 @@ export function NegotiationCardView() {
   }
 
   return (
-    <div style={{ padding: 'var(--space-xl) var(--space-lg)' }}>
+    <div className="neg-card-wrapper">
       <div className="neg-card" id="negotiation-card">
         <div className="neg-card__header">
           <div>
-            <div className="neg-card__title">YOUR NEGOTIATION CARD</div>
+            <div className="neg-card__badge">BRANCH READY DOSSIER</div>
+            <div className="neg-card__title">BORROWER NEGOTIATION CARD</div>
             <div className="neg-card__date">
-              Generated {card.generatedDate} · For discussion only
+              Generated {card.generatedDate} · Independent Borrower Assessment
             </div>
+          </div>
+          <div className="no-print">
+            <button
+              className="btn btn--primary"
+              onClick={() => window.print()}
+            >
+              Print / Save PDF
+            </button>
           </div>
         </div>
 
-        {/* Profile */}
+        {/* Profile badges */}
         <div className="neg-card__profile">
-          <span className="neg-card__profile-item">{card.profile.incomeType}</span>
+          <span className="neg-card__profile-item">Employment: {card.profile.incomeType}</span>
           {card.profile.age && (
-            <span className="neg-card__profile-item">Age {card.profile.age}</span>
+            <span className="neg-card__profile-item">Age: {card.profile.age}</span>
           )}
-          <span className="neg-card__profile-item">{card.profile.scoreBand}</span>
+          <span className="neg-card__profile-item">Credit Score: {card.profile.scoreBand}</span>
         </div>
 
-        {/* Verdict */}
-        <div className="neg-card__section">
-          <div className="neg-card__section-title">
-            <span className="neg-card__section-icon">🎯</span>
-            Assessment
-          </div>
-          <div className="neg-card__section-value">{card.verdict.decision}</div>
-          <div className="neg-card__section-reason">{card.verdict.reason}</div>
-        </div>
-
-        {/* Fair Rate */}
-        <div className="neg-card__section">
-          <div className="neg-card__section-title">
-            <span className="neg-card__section-icon">💰</span>
-            Fair Rate for Your Profile
-          </div>
-          <div className="neg-card__section-value">
-            {formatPctRange(card.fairRate[0], card.fairRate[1])}
-          </div>
-          <div className="neg-card__section-reason">
-            All-in cost (APR): {formatPctRange(card.fairAPR[0], card.fairAPR[1])}
-          </div>
-          <div className="neg-card__section-reason" style={{ marginTop: '4px' }}>
-            {card.rateReason}
-          </div>
-        </div>
-
-        {/* Amounts */}
-        <div className="neg-card__section">
-          <div className="neg-card__section-title">
-            <span className="neg-card__section-icon">📊</span>
-            Borrowing Capacity
-          </div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-            <div>
-              <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-muted)', marginBottom: '4px' }}>
-                Safe to carry
+        {/* Two-column layout on desktop */}
+        <div className="neg-card__grid">
+          {/* Left Column: Core Numbers */}
+          <div className="neg-card__col">
+            {/* Verdict */}
+            <div className="neg-card__section">
+              <div className="neg-card__section-title">
+                <span className="neg-card__section-icon">🎯</span>
+                Assessment Verdict
               </div>
-              <div className="neg-card__section-value" style={{ color: 'var(--accent-green)', fontSize: 'var(--font-size-lg)' }}>
-                {formatRupeeRange(card.safeAmount[0], card.safeAmount[1], true)}
-              </div>
+              <div className="neg-card__section-value">{card.verdict.decision}</div>
+              <div className="neg-card__section-reason">{card.verdict.reason}</div>
             </div>
-            <div>
-              <div style={{ fontSize: 'var(--font-size-xs)', color: 'var(--text-muted)', marginBottom: '4px' }}>
-                Lender may offer
+
+            {/* Amounts */}
+            <div className="neg-card__section">
+              <div className="neg-card__section-title">
+                <span className="neg-card__section-icon">📊</span>
+                Borrowing Capacity
               </div>
-              <div className="neg-card__section-value" style={{ fontSize: 'var(--font-size-lg)' }}>
-                {formatRupeeRange(card.lenderAmount[0], card.lenderAmount[1], true)}
+              <div className="amount-comparison" style={{ marginBottom: '8px' }}>
+                <div className="amount-comparison__item">
+                  <div className="amount-comparison__label">Safe to carry</div>
+                  <div className="amount-comparison__value amount-comparison__value--safe">
+                    {formatRupeeRange(card.safeAmount[0], card.safeAmount[1], true)}
+                  </div>
+                </div>
+                <div className="amount-comparison__item">
+                  <div className="amount-comparison__label">Lender may approve</div>
+                  <div className="amount-comparison__value amount-comparison__value--lender">
+                    {formatRupeeRange(card.lenderAmount[0], card.lenderAmount[1], true)}
+                  </div>
+                </div>
               </div>
+              <div className="neg-card__section-reason">{card.amountAdvice}</div>
+            </div>
+
+            {/* Fair Rate */}
+            <div className="neg-card__section">
+              <div className="neg-card__section-title">
+                <span className="neg-card__section-icon">💰</span>
+                Fair Rate & All-In Cost
+              </div>
+              <div className="rate-display" style={{ marginBottom: '8px' }}>
+                <div className="rate-display__item">
+                  <div className="rate-display__label">Quoted Rate Band</div>
+                  <div className="rate-display__value">
+                    {formatPctRange(card.fairRate[0], card.fairRate[1])}
+                  </div>
+                </div>
+                <div className="rate-display__item">
+                  <div className="rate-display__label">True All-in APR</div>
+                  <div className="rate-display__value" style={{ color: 'var(--accent-gold)' }}>
+                    {formatPctRange(card.fairAPR[0], card.fairAPR[1])}
+                  </div>
+                </div>
+              </div>
+              <div className="neg-card__section-reason">{card.rateReason}</div>
+            </div>
+
+            {/* EMI Ceiling */}
+            <div className="neg-card__section">
+              <div className="neg-card__section-title">
+                <span className="neg-card__section-icon">📋</span>
+                Safe EMI Ceiling
+              </div>
+              <div className="neg-card__section-value" style={{ color: 'var(--accent-gold)' }}>
+                {formatRupees(card.emiCeiling)} / month
+              </div>
+              <div className="neg-card__section-reason">{card.stressSummary}</div>
             </div>
           </div>
-          <div className="neg-card__section-reason" style={{ marginTop: '8px' }}>
-            {card.amountAdvice}
-          </div>
-        </div>
 
-        {/* EMI Ceiling */}
-        <div className="neg-card__section">
-          <div className="neg-card__section-title">
-            <span className="neg-card__section-icon">📋</span>
-            EMI Ceiling
-          </div>
-          <div className="neg-card__section-value">
-            {formatRupees(card.emiCeiling)}/month
-          </div>
-          <div className="neg-card__section-reason">{card.stressSummary}</div>
-        </div>
+          {/* Right Column: Negotiation Leverage & Branch Strategy */}
+          <div className="neg-card__col">
+            {/* Offer comparison if present */}
+            {card.comparisonNote && (
+              <div className="neg-card__section neg-card__section--highlight">
+                <div className="neg-card__section-title">
+                  <span className="neg-card__section-icon">🔍</span>
+                  Lender Offer vs Fair Range
+                </div>
+                <div className="neg-card__section-reason">{card.comparisonNote}</div>
+              </div>
+            )}
 
-        {/* Lender offer comparison */}
-        {card.comparisonNote && (
-          <div className="neg-card__section">
-            <div className="neg-card__section-title">
-              <span className="neg-card__section-icon">🔍</span>
-              Your Offer vs Fair Range
+            {/* Questions to Ask */}
+            <div className="neg-card__questions">
+              <div className="neg-card__questions-title">
+                Critical Questions to Ask Before Signing:
+              </div>
+              {card.lenderQuestions.map((q, i) => (
+                <div key={i} className="neg-card__question-item">
+                  <span className="neg-card__question-num">{i + 1}</span>
+                  <span>{q}</span>
+                </div>
+              ))}
             </div>
-            <div className="neg-card__section-reason">{card.comparisonNote}</div>
-          </div>
-        )}
 
-        {/* Questions to ask */}
-        <div className="neg-card__questions">
-          <div className="neg-card__questions-title">
-            Ask the lender these questions:
+            {/* Negotiation rules of thumb */}
+            <div className="neg-card__section" style={{ marginTop: 'var(--space-md)' }}>
+              <div className="neg-card__section-title">
+                <span className="neg-card__section-icon">🛡</span>
+                Branch Negotiation Rules:
+              </div>
+              <ul className="neg-card__bullet-list">
+                <li>Never accept loan insurance bundled into the principal without itemized written quotes.</li>
+                <li>Compare the loan against your True APR (IRR), not the nominal rate quoted by the sales agent.</li>
+                <li>Confirm in writing that there are zero foreclosure/prepayment penalties.</li>
+              </ul>
+            </div>
           </div>
-          {card.lenderQuestions.map((q, i) => (
-            <div key={i} className="neg-card__question-item">{q}</div>
-          ))}
         </div>
 
         <div className="neg-card__footer">
           <div className="neg-card__disclaimer">
-            Self-assessment only. Not a credit offer. Based on user-provided information.
-            Generated by Lokta Borrower Copilot.
+            Self-assessment dossier prepared by Lokta Borrower Copilot. Independent borrower assessment based on RBI guidelines and industry FOIR benchmarks. Not an official sanction letter.
           </div>
           <div className="no-print">
             <button

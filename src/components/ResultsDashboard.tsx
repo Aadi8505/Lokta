@@ -37,8 +37,44 @@ export function ResultsDashboard() {
       </div>
 
       <div className="results__grid">
+        {/* ═══ EXECUTIVE KPI SUMMARY ROW ═══ */}
+        <div className="kpi-grid">
+          <div className="kpi-card">
+            <span className="kpi-card__label">Decision</span>
+            <span className={`kpi-card__value kpi-card__value--${verdictColors[verdict.decision]}`}>
+              {verdict.decision === 'borrow' ? 'Borrow' : verdict.decision === 'borrow_less' ? 'Borrow Less' : 'Don\'t Borrow'}
+            </span>
+            <span className="kpi-card__sub">{verdict.confidenceLevel.toUpperCase()} CONFIDENCE</span>
+          </div>
+          <div className="kpi-card">
+            <span className="kpi-card__label">Safe Carry Ceiling</span>
+            <span className="kpi-card__value" style={{ color: 'var(--accent-green)' }}>
+              {formatRupeeRange(eligibility.safeCarryAmount[0], eligibility.safeCarryAmount[1], true)}
+            </span>
+            <span className="kpi-card__sub">Lender max: {formatRupeeRange(eligibility.lenderLikelyAmount[0], eligibility.lenderLikelyAmount[1], true)}</span>
+          </div>
+          <div className="kpi-card">
+            <span className="kpi-card__label">Fair Rate (Nominal)</span>
+            <span className="kpi-card__value" style={{ color: 'var(--accent-gold)' }}>
+              {formatPctRange(rateBand.nominalRate[0], rateBand.nominalRate[1])}
+            </span>
+            <span className="kpi-card__sub">True APR: {formatPctRange(rateBand.apr[0], rateBand.apr[1])}</span>
+          </div>
+          <div className="kpi-card">
+            <span className="kpi-card__label">Monthly EMI Ceiling</span>
+            <span className="kpi-card__value" style={{ color: 'var(--accent-gold)' }}>
+              {formatRupees(emiResult.emiCeiling)}/mo
+            </span>
+            <span className="kpi-card__sub">
+              {emiResult.stressTest.rateRiseStillAffordable && emiResult.stressTest.incomeDropStillAffordable
+                ? 'Resilient to +200bps / -20%'
+                : 'Vulnerable to shocks'}
+            </span>
+          </div>
+        </div>
+
         {/* ═══ O1: VERDICT ═══ */}
-        <div className="card result-card">
+        <div className="card result-card result-card--verdict">
           <div className="result-card__header">
             <span className="result-card__label">Should you borrow?</span>
             <ConfidenceBadge level={verdict.confidenceLevel} />
@@ -70,7 +106,7 @@ export function ResultsDashboard() {
         </div>
 
         {/* ═══ O2: ELIGIBILITY ═══ */}
-        <div className="card result-card">
+        <div className="card result-card result-card--eligibility">
           <div className="result-card__header">
             <span className="result-card__label">How much can you borrow?</span>
             <ConfidenceBadge level={eligibility.confidenceLevel} />
@@ -122,7 +158,7 @@ export function ResultsDashboard() {
         </div>
 
         {/* ═══ O3: RATE ═══ */}
-        <div className="card result-card">
+        <div className="card result-card result-card--rate">
           <div className="result-card__header">
             <span className="result-card__label">Fair interest rate</span>
             <ConfidenceBadge level={rateBand.confidenceLevel} />
@@ -191,7 +227,7 @@ export function ResultsDashboard() {
         )}
 
         {/* ═══ O4: EMI ═══ */}
-        <div className="card result-card">
+        <div className="card result-card result-card--emi">
           <div className="result-card__header">
             <span className="result-card__label">EMI & Tenure</span>
             <ConfidenceBadge level={emiResult.confidenceLevel} />
@@ -218,15 +254,22 @@ export function ResultsDashboard() {
                   key={opt.tenureMonths}
                   className={opt.isRecommended ? 'tr--recommended' : ''}
                 >
-                  <td>{opt.tenureMonths} months</td>
-                  <td className={!opt.withinSafeCeiling ? 'unsafe' : ''}>
-                    {formatRupees(opt.emi)}
-                  </td>
-                  <td>{formatRupees(opt.totalInterest)}</td>
                   <td>
-                    {opt.isRecommended && <span className="badge badge--green">Recommended</span>}
-                    {!opt.withinSafeCeiling && !opt.isRecommended && (
-                      <span className="badge badge--red">Above ceiling</span>
+                    <strong>{opt.tenureMonths} mo</strong> ({Math.round(opt.tenureMonths / 12)} yr)
+                  </td>
+                  <td>
+                    <span className="rupee">{formatRupees(opt.emi)}</span>
+                  </td>
+                  <td>
+                    <span className="rupee">{formatRupees(opt.totalInterest)}</span>
+                  </td>
+                  <td>
+                    {opt.isRecommended ? (
+                      <span className="badge badge--green">Recommended</span>
+                    ) : opt.withinSafeCeiling ? (
+                      <span className="badge badge--gold">Affordable</span>
+                    ) : (
+                      <span className="badge badge--red">Stretched</span>
                     )}
                   </td>
                 </tr>
@@ -242,21 +285,29 @@ export function ResultsDashboard() {
         </div>
 
         {/* ═══ NAVIGATION ═══ */}
-        <div style={{ display: 'flex', gap: '12px', padding: 'var(--space-md) 0 var(--space-2xl)' }}>
-          <button
-            className="btn btn--primary btn--lg btn--full"
-            id="view-negotiation-card"
-            onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'negotiation_card' })}
-          >
-            View Negotiation Card →
-          </button>
+        <div className="results__actions">
+          <div className="results__actions-text">
+            <h3 className="results__actions-title">Carry this leverage into your branch meeting</h3>
+            <p className="results__actions-desc">
+              Generate a printable, single-page Negotiation Card summarizing your fair rate, safe carry limit, and key questions to ask before signing.
+            </p>
+          </div>
+          <div className="results__actions-buttons">
+            <button
+              className="btn btn--primary btn--lg"
+              id="view-negotiation-card"
+              onClick={() => dispatch({ type: 'SET_SCREEN', screen: 'negotiation_card' })}
+            >
+              Open Negotiation Card →
+            </button>
+            <button
+              className="btn btn--ghost"
+              onClick={() => dispatch({ type: 'RESET' })}
+            >
+              Restart Assessment
+            </button>
+          </div>
         </div>
-        <button
-          className="btn btn--ghost btn--full"
-          onClick={() => dispatch({ type: 'RESET' })}
-        >
-          Start over
-        </button>
       </div>
     </div>
   );

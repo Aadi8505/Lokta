@@ -7,6 +7,7 @@
 
 import React, { createContext, useContext, useReducer, type ReactNode } from 'react';
 import type { BorrowerAnswers, FullAssessment } from '../engine/types';
+import { runAssessment } from '../engine/assessment';
 
 // ─── App Flow States ────────────────────────────────────────────────────────
 
@@ -43,6 +44,7 @@ type Action =
   | { type: 'SET_ANSWER'; field: string; value: unknown }
   | { type: 'SKIP_QUESTION' }
   | { type: 'SET_ASSESSMENT'; assessment: FullAssessment }
+  | { type: 'LOAD_PROFILE'; answers: BorrowerAnswers }
   | { type: 'NEXT_QUESTION' }
   | { type: 'PREV_QUESTION' }
   | { type: 'SET_QUESTION_INDEX'; index: number }
@@ -64,6 +66,17 @@ function reducer(state: BorrowerState, action: Action): BorrowerState {
 
     case 'SET_ASSESSMENT':
       return { ...state, assessment: action.assessment };
+
+    case 'LOAD_PROFILE': {
+      const assessment = runAssessment(action.answers);
+      return {
+        ...state,
+        answers: action.answers,
+        assessment,
+        screen: 'results',
+        questionIndex: 0,
+      };
+    }
 
     case 'NEXT_QUESTION':
       return {
