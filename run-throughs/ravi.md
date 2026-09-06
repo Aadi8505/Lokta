@@ -94,7 +94,22 @@
 
 ## 4. UI Screenshots
 
-*(Screenshots can be added here)*
-- `[Screenshot 1: Kirana Owner Question Flow with Collateral]`
-- `[Screenshot 2: Unsecured vs LAP Comparison View]`
-- `[Screenshot 3: Negotiation Card with Secured Loan Terms]`
+### 1. Results Dashboard — Executive KPI Strip & Assessment Verdict
+Executive dashboard showing Ravi's assessment verdict under property collateral consideration, Safe Carry ceiling (₹18.9L – ₹30.7L), and safe EMI ceiling (₹34,000/mo).
+
+![Ravi Assessment Verdict](./assets/ravi-assessment-verdict.png)
+
+---
+
+### 2. Borrowing Capacity, Product Comparison & Fair Rate Band
+Detailed breakdown contrasting Unsecured Business Loan vs. Loan Against Property (LAP) and Secured Business Loan, quoting 10.5% – 16.5% base rate for LAP.
+
+![Ravi Product Comparison](./assets/ravi-product-comparison.png)
+
+---
+
+### 3. Branch Ready Dossier — Borrower Negotiation Card
+One-page printable negotiation card summarizing Ravi's borrowing limits, critical questions to ask the loan officer before signing, and branch negotiation rules.
+
+![Ravi Negotiation Card](./assets/ravi-negotiation-card.png)
+

@@ -42,7 +42,7 @@ When an Indian borrower walks into a bank branch or talks to a Direct Selling Ag
 ### A. Pure TypeScript Rules Engine (`src/engine/`)
 All financial logic is strictly separated from UI components:
 - Zero React dependencies in `src/engine/`.
-- Single source of truth in [`src/engine/rules.ts`](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/src/engine/rules.ts), mirrored in human-readable documentation at [`RULES.md`](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/RULES.md).
+- Single source of truth in [`src/engine/rules.ts`](./src/engine/rules.ts), mirrored in human-readable documentation at [`RULES.md`](./RULES.md).
 - Instant unit testing with Vitest (67 tests passing in <100ms).
 
 ### B. True APR via Cash-Flow IRR
