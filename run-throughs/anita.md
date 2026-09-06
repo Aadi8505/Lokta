@@ -92,12 +92,16 @@
 ### 1. Results Dashboard — Verdict & Safe Carry Ceiling
 Anita's financial assessment produces a clear **"Don't borrow right now"** verdict due to zero emergency savings and 41% existing EMI obligations. Her safe carry ceiling is correctly calculated as ₹0.
 
+([Open full-resolution image](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/assets/anita-results-dashboard.png))
+
 ![Anita Assessment Results Dashboard](./assets/anita-results-dashboard.png)
 
 ---
 
 ### 2. Borrower Negotiation Card — Branch Dossier & First-Aid Plan
 The one-page branch dossier highlighting the predatory 30% lender offer (+16.5% above fair range) and four critical questions to ask before signing.
+
+([Open full-resolution image](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/assets/anita-negotiation-card.png))
 
 ![Anita Borrower Negotiation Card](./assets/anita-negotiation-card.png)
 
@@ -106,6 +110,8 @@ The one-page branch dossier highlighting the predatory 30% lender offer (+16.5% 
 ### 3. Questionnaire Flow — Income Range Capture
 Refining questions capturing worst-to-best monthly cash flow variations to stress-test irregular income.
 
+([Open full-resolution image](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/assets/anita-question-income-range.png))
+
 ![Income Range Question](./assets/anita-question-income-range.png)
 
 ---
@@ -113,5 +119,8 @@ Refining questions capturing worst-to-best monthly cash flow variations to stres
 ### 4. Questionnaire Flow — Income Stability
 Capturing income predictability (Stable, Seasonal, Volatile) to dynamically calibrate emergency buffer requirements.
 
+([Open full-resolution image](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/assets/anita-question-stability.png))
+
 ![Income Stability Question](./assets/anita-question-stability.png)
+
 
