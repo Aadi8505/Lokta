@@ -10,7 +10,6 @@ import {
   RATE_GRID,
   INCOME_TYPE_RATE_PREMIUM,
   PROCESSING_FEE_RANGE,
-  CONFIDENCE_FIELDS,
   UNKNOWN_PENALTIES,
   type LoanProduct,
   type CreditScoreBand,

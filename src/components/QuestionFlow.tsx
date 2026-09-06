@@ -75,8 +75,8 @@ export function QuestionFlow({ tier }: Props) {
         )}
 
         <QuestionInput
+          key={question.id}
           question={question}
-          answers={answers}
           onAnswer={(value) => {
             dispatch({ type: 'SET_ANSWER', field: question.field as string, value });
           }}
@@ -130,19 +130,12 @@ export function QuestionFlow({ tier }: Props) {
  */
 function QuestionInput({
   question,
-  answers,
   onAnswer,
 }: {
   question: QuestionDefinition;
-  answers: BorrowerAnswers;
   onAnswer: (value: unknown) => void;
 }) {
   const [inputValue, setInputValue] = useState('');
-
-  // Reset input when question changes
-  useEffect(() => {
-    setInputValue('');
-  }, [question.id]);
 
   const handleSubmitNumber = useCallback(() => {
     const num = parseFloat(inputValue.replace(/,/g, ''));
@@ -291,7 +284,7 @@ function QuestionInput({
       );
 
     case 'range':
-      return <RangeInput question={question} onAnswer={onAnswer} />;
+      return <RangeInput onAnswer={onAnswer} />;
 
     default:
       return null;
@@ -302,10 +295,8 @@ function QuestionInput({
  * Range input for income variability (low–high).
  */
 function RangeInput({
-  question,
   onAnswer,
 }: {
-  question: QuestionDefinition;
   onAnswer: (value: unknown) => void;
 }) {
   const [low, setLow] = useState('');

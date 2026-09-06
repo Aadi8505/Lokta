@@ -10,13 +10,10 @@
  */
 
 import {
-  FOIR_CAPS,
   FOIR_HARD_CEILING,
   FOIR_WARNING_ZONE,
   PRODUCT_CONFIG,
   SAVINGS_THRESHOLDS,
-  VERDICT_RULES,
-  type IncomeType,
 } from './rules';
 import type { BorrowerAnswers, Verdict } from './types';
 import {
@@ -41,8 +38,7 @@ import { getApplicableProducts } from './eligibility';
  */
 export function generateVerdict(answers: BorrowerAnswers): Verdict {
   const details: string[] = [];
-  const incomeType = answers.incomeType ?? 'salaried';
-  const { lenderIncome, actualIncome } = getEffectiveIncome(answers);
+  const { actualIncome } = getEffectiveIncome(answers);
   const existingEmis = answers.existingEmis ?? 0;
   const amountWanted = answers.amountWanted ?? 0;
 

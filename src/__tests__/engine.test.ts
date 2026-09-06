@@ -14,7 +14,7 @@ import { generateVerdict } from '../engine/verdict';
 import { calculateConfidence } from '../engine/confidence';
 import { runAssessment } from '../engine/assessment';
 import { compareLenderOffer } from '../engine/lenderComparison';
-import { FOIR_CAPS, FOIR_HARD_CEILING, RATE_GRID } from '../engine/rules';
+import { FOIR_CAPS, RATE_GRID } from '../engine/rules';
 import type { BorrowerAnswers } from '../engine/types';
 
 // ═══ EMI CALCULATOR ═══════════════════════════════════════════════════════
@@ -403,6 +403,7 @@ describe('Confidence System', () => {
     const emiConf = calculateConfidence(answers, 'emi');
     // Rate confidence should be lower than EMI since credit score is missing
     expect(rateConf.unknownFields).toContain('creditScore');
+    expect(emiConf.unknownFields).not.toContain('creditScore');
   });
 });
 

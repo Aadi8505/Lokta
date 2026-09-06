@@ -6,7 +6,7 @@
  * plus Negotiation Card and optional Lender Comparison.
  */
 
-import { PRODUCT_CONFIG, PROCESSING_FEE_RANGE, type LoanProduct } from './rules';
+import { PRODUCT_CONFIG } from './rules';
 import type {
   BorrowerAnswers,
   FullAssessment,
@@ -17,7 +17,6 @@ import { generateVerdict } from './verdict';
 import { calculateEligibility, getApplicableProducts } from './eligibility';
 import { getRateBand, scoreToBand, scoreBandLabel } from './rateEngine';
 import {
-  calculateEMI,
   tenureTradeoff,
   stressTest,
 } from './emiCalculator';
@@ -141,7 +140,6 @@ function buildNegotiationCard(
     'Is there a prepayment or foreclosure penalty?',
   ];
 
-  const feeRange = Object.values(PROCESSING_FEE_RANGE)[0]; // Default
   lenderQuestions.push(
     `What is the processing fee? (Fair range for your product: ${rateBand.processingFee[0]}–${rateBand.processingFee[1]}%)`
   );

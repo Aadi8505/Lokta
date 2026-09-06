@@ -13,7 +13,6 @@ import {
   PRODUCT_CONFIG,
   PURPOSE_TO_PRODUCTS,
   type LoanProduct,
-  type LoanPurpose,
   type IncomeType,
 } from './rules';
 import type { BorrowerAnswers, Eligibility, ProductRecommendation } from './types';
@@ -23,7 +22,7 @@ import {
   getSafeEmiCeiling,
 } from './affordability';
 import { maxPrincipalForEmi } from './emiCalculator';
-import { getRateBand, scoreToBand } from './rateEngine';
+import { getRateBand } from './rateEngine';
 import { calculateConfidence, widenRange } from './confidence';
 
 /**
@@ -230,8 +229,8 @@ export function calculateEligibility(answers: BorrowerAnswers): Eligibility {
   }
 
   // Explanations for key numbers
-  const { lenderIncome, explanation: incomeExpl } = getEffectiveIncome(answers);
-  const { safeEmi, explanation: safeExpl } = getSafeEmiCeiling(answers);
+  const { explanation: incomeExpl } = getEffectiveIncome(answers);
+  const { explanation: safeExpl } = getSafeEmiCeiling(answers);
 
   const explanations: Record<string, string> = {
     lenderAmount: `${incomeExpl}. With FOIR cap of ${(getFoirCapForType(answers.incomeType ?? 'salaried') * 100)}%, your max lender EMI drives this number.`,

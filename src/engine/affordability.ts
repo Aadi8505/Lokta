@@ -7,7 +7,6 @@
 
 import {
   FOIR_CAPS,
-  FOIR_HARD_CEILING,
   INCOME_DISCOUNT,
   PRODUCTIVE_LOAN,
   SAVINGS_THRESHOLDS,
@@ -122,7 +121,6 @@ export function getSafeEmiCeiling(answers: BorrowerAnswers): {
     available: number;
   };
 } {
-  const incomeType = answers.incomeType ?? 'salaried';
   const { actualIncome } = getEffectiveIncome(answers);
   const existingEmis = answers.existingEmis ?? 0;
 

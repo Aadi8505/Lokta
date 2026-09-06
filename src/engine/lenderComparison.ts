@@ -5,9 +5,9 @@
  * it to the fair rate/APR band. Provides a verdict and savings estimate.
  */
 
-import { LENDER_COMPARISON, type LoanProduct } from './rules';
+import { LENDER_COMPARISON } from './rules';
 import type { BorrowerAnswers, LenderComparison, RateBand } from './types';
-import { calculateAPR, calculateEMI, totalInterest } from './emiCalculator';
+import { calculateAPR, totalInterest } from './emiCalculator';
 
 /**
  * Compare a lender's offer to the borrower's fair rate band.
@@ -30,7 +30,6 @@ export function compareLenderOffer(
 
   // Fair rate midpoint
   const fairMid = (fairRateBand.nominalRate[0] + fairRateBand.nominalRate[1]) / 2;
-  const fairAPRMid = (fairRateBand.apr[0] + fairRateBand.apr[1]) / 2;
 
   // Compare
   const diffBps = (offeredRate - fairMid) * 100; // Basis points above/below fair
