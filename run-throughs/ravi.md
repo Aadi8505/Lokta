@@ -7,40 +7,28 @@
 
 ## 1. Questions Asked & Answers Given
 
-### Must Questions (Tier 1: Core Financial Profile)
-| # | Question Prompt | Answer Given | Engine Implication |
+### Must Questions (Tier 1)
+| # | Question | Answer Given | Engine Implication |
 |---|---|---|---|
 | 1 | What do you need the loan for? | **Business expansion / stock** | Triggers Business Loan evaluation |
-| 2 | How much do you want to borrow? | **₹15,00,000** | Sets requested principal |
-| 3 | What type of income do you earn? | **Self-employed / Business owner** | Prompts for ITR documentation |
-| 4 | What is your net monthly income? | **₹60,000** | Stated monthly business income base |
+| 2 | How much loan amount are you looking for? | **₹15,00,000** | Sets requested principal |
+| 3 | What is your employment type? | **Self-employed** | Prompts for ITR documentation |
+| 4 | What is your monthly cash/net business income? | **₹60,000** (range ₹40k – ₹80k) | Midpoint used for actual income; low end for stress |
 | 5 | What is your total monthly existing EMI outflow? | **₹0** | No existing debt obligations |
 | 6 | What are your monthly household expenses? | **₹20,000** | Modest living expenses |
-| 7 | How old are you? | **42** | 23 years left till retirement age 65 |
-| 8 | What is your credit score (CIBIL)? | **[Click "I don't know my credit score"]** | Maps to 'unknown' band — widens rate band without score penalty |
+| 7 | What is your age? | **42** | 23 years left till retirement age 65 |
+| 8 | What is your credit score? | **Don't know / Unknown** | Maps to 'unknown' band — widens rate band without 300 penalty |
 
-### Additional Questions (Tier 2: Range Refinement)
-*(Note: Every question below has a **"Skip this question →"** button. You can also click **"Skip remaining & Show Results →"** at any point!)*
-
-| # | Question Prompt | Answer Given / Action | Engine Implication |
+### Additional Questions (Tier 2)
+| # | Question | Answer Given | Engine Implication |
 |---|---|---|---|
-| 9 | What is your income range — worst month to best month? | **₹40,000** to **₹80,000** | Low end used for stress-testing lean seasons |
-| 10 | How stable is your income month to month? | **Seasonal** | Flags seasonal inventory cycles |
-| 11 | How many years have you been running your business? | **8** | Strong business continuity track record |
-| 12 | Have you filed an Income Tax Return (ITR)? | **Yes** | Uses audited ITR figure rather than discounting cash |
-| 13 | What is your annual income as per your last ITR? | **₹4,20,000** | Lenders consider ₹35,000/month as verified base |
-| 14 | Do you own any property or gold you could offer as collateral? | **Yes** | **Crucial inflection point: enables LAP comparison** |
-| 15 | What is the approximate value of your property/gold? | **₹45,00,000** | 60% LTV on LAP = up to ₹27,00,000 capacity |
-| 16 | How many months of expenses could you cover from savings? | **4** | Adequate savings buffer |
-| 17 | How many dependents do you support? | **3** (or *Skip*) | Household cash-flow obligation |
-| 18 | Can someone co-apply with you? | **Yes** | Boosts lender eligibility |
-| 19 | What is your co-applicant's monthly income? | **₹18,000** (Wife) | Additional household verified income |
-| 20 | Do you have any large expenses coming up in next 12 months? | **No** (or *Skip*) | Stable cash reserves |
-| 21 | Will this loan directly help you earn more money? | **Yes** | Productive business loan classification |
-| 22 | How much extra income per month do you expect? | **₹15,00,000** stock/vehicle | Conservative +₹7,500/mo cash buffer offset |
-| 23 | Have you already received a loan offer from a lender? | **Yes** | Triggers lender offer comparison |
-| 24 | What interest rate were you offered? | **18.0** (%) | NBFC unsecured business rate |
-| 25 | What processing fee was quoted? | **2.0** (%) | Standard upfront fee |
+| 9 | Have you filed an Income Tax Return (ITR)? | **Yes** | Uses audited ITR figure rather than discounting cash |
+| 10 | What is your annual ITR income? | **₹4,20,000** | Lenders consider ₹35,000/month as verified base |
+| 11 | Do you have collateral (property/gold)? | **Yes (Property)** | **Crucial inflection point: enables LAP comparison** |
+| 12 | What is the estimated market value of the collateral? | **₹45,00,000** | 60% LTV on LAP = up to ₹27,00,000 capacity |
+| 13 | Can a family member co-apply? | **Yes (Wife earns ₹18,000/mo)** | Boosts lender eligibility |
+| 14 | Will this loan generate new monthly business income? | **Yes (₹15,00,000 stock/vehicle)** | Productive loan offset: adds conservative +₹7,500/mo cash buffer |
+| 15 | How many months of expenses do you have in savings? | **4 months** | Adequate savings buffer |
 
 ---
 
