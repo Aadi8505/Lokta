@@ -68,31 +68,32 @@ Borrowers who do not know their CIBIL score are not treated as subprime (300). I
 ## 3. How the Engine Solves the Three Borrowers
 
 ### 1. Priya (Salaried Techie, Bengaluru)
-- **Profile**: ₹1.10L/mo salary, 780 CIBIL, ₹14k existing car EMI, ₹28k rent. Seeking ₹8L personal loan.
+- **Profile**: ₹1,50,000/mo salary, 760+ CIBIL, ₹15,000 existing EMI, ₹45,000 expenses, 6 months emergency savings. Seeking ₹8,00,000 loan.
 - **Engine Behavior**:
   - Full salary verified with 0% discount.
-  - FOIR stays at a comfortable 27% (well below the 45% safe cap).
-  - Clear **Borrow** verdict.
-  - Safe carry capacity (₹14.5L+) easily covers requested ₹8L.
-  - Quoted fair rate band of **10.50% – 13.00%** (APR ~11.5%–14.2% with fees).
+  - FOIR stays at a comfortable 28% (well below the 45% safe cap).
+  - Clear **`✓ Go ahead and borrow`** verdict.
+  - Safe carry capacity (**₹17.5L – ₹32.5L**) easily covers requested ₹8L.
+  - Quoted fair rate band of **10.3% – 12.8%** (True APR 11.3% – 14.9%).
+  - Safe EMI ceiling of **₹82,500/mo** with recommended 12-month tenure at ₹70,892/mo.
 
 ### 2. Ravi (Kirana Store Owner, Mysuru)
-- **Profile**: Stated cash income ₹40k–₹80k, ITR ₹4.2L/yr, unencumbered ₹45L shop premises, no credit score, seeking ₹15L for inventory & vehicle.
+- **Profile**: Stated business income ₹60,000/mo, ITR ₹4,20,000/yr (₹35,000/mo base), unencumbered ₹45,00,000 shop property, unknown credit score, seeking ₹15,00,000 for expansion.
 - **Engine Behavior**:
-  - Lender discounts stated cash income and utilizes ITR figure (₹35,000/mo).
-  - An unsecured business loan of ₹15L over 3 years would explode FOIR to >90%.
+  - Lender uses verified ITR income (₹35,000/mo) with 50% FOIR cap.
+  - An unsecured business loan would stretch FOIR to 96% and cap safe carry at ₹13.8L.
   - **The Copilot detects his ₹45L collateral and routes him to compare Loan Against Property (LAP) / Secured Business Loan**.
-  - Over a 10-year LAP tenure at 10% interest, EMI drops to ~₹19,800/mo.
-  - Factoring in ₹7,500/mo stressed productive income from the second stock line, his safe EMI capacity covers the loan.
-  - Verdict: **Borrow** with strict advice to avoid expensive unsecured business credit.
+  - Pledging property unlocks safe carry of **₹18.9L – ₹30.7L**, safely covering his ₹15L goal at 10.5% – 16.5% interest.
+  - Verdict: **`⚠ Consider borrowing less`** to maintain safety against lean-season 20% income drops under his ₹34,000/mo safe ceiling.
 
 ### 3. Anita (Informal Earner, Hubballi)
-- **Profile**: Delivery rider + home tailoring, ₹26k–₹30k/mo, 3 app loans totaling ₹35k at 30%+, 1 bounced EMI, 0 savings. Wants ₹1.5L for an e-scooter.
+- **Profile**: Delivery rider + home tailoring, ₹28,000/mo cash, ₹11,500 existing EMIs (41% FOIR) at 36% interest, 1 bounced EMI, 0 savings. Seeks ₹30,000 emergency loan.
 - **Engine Behavior**:
   - 50% discount on informal cash income.
-  - High-cost debt detection triggers: existing debt exceeds 24% and borrower has a recent bounce.
-  - **Hard "Don't borrow yet" verdict fires**.
-  - The Copilot issues an actionable **Debt-First Recommendation**: Clear or restructure the 30% app loans first. Suggests alternative lower-rate channels (e.g. self-help groups, employer advance, or gold loan) rather than taking another predatory micro-loan.
+  - High existing obligations (41% FOIR) + zero savings trigger hard stop.
+  - **Hard `✗ Don't borrow right now` verdict fires**.
+  - Both lender max and safe carry calculate to **₹0**.
+  - Lender offer comparison exposes a 30% digital app quote as **+16.5% above fair range** (12%–15%), giving actionable advice to seek non-predatory alternatives (SHG / employer advance) and build a 2–3 month buffer.
 
 ---
 

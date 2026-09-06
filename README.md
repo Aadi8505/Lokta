@@ -54,19 +54,19 @@ The application runs locally on `http://localhost:5173`. No backend, no login, n
 
 ---
 
-## 🧪 Built-in Borrower Personas for Testing
+## 🧪 Verified Borrower Personas
 
 ### 1. [Priya Sharma (Salaried Tech Professional, Bengaluru)](./run-throughs/priya.md)
-- **Goal**: ₹8,00,000 Personal Loan for wedding
-- **Profile**: ₹1,10,000/mo salary, 780 CIBIL, ₹14,000 existing EMI, ₹40,000 expenses, 6 months emergency savings.
-- **Expected Outcome**: Clear **Borrow** verdict, ₹8L fully covered by safe carry (₹14.5L+ safe), ~10.5%–12.5% rate band.
+- **Goal**: ₹8,00,000 Home Renovation / Personal Loan
+- **Profile**: ₹1,50,000/mo salary, 760+ CIBIL, ₹15,000 existing EMI, ₹45,000 expenses, 6 months emergency savings.
+- **Outcome**: Clear **`✓ Go ahead and borrow`** verdict, ₹8L fully covered by safe carry (₹17.5L – ₹32.5L), 10.3%–12.8% prime rate band.
 
 ### 2. [Ravi Kumar (Kirana Store Owner, Mysuru)](./run-throughs/ravi.md)
 - **Goal**: ₹15,00,000 Business Loan for shop expansion
-- **Profile**: Self-employed, ₹40k–₹80k monthly income, ₹4.2L annual ITR, ₹45,00,000 property collateral available, unknown credit score, 4 months savings.
-- **Expected Outcome**: **Borrow** with recommendation to **compare secured business financing / LAP** over expensive unsecured credit; safe carry considers productive income boost.
+- **Profile**: Self-employed, ₹60,000/mo stated income, ₹4.2L annual ITR, ₹45,00,000 property collateral, unknown credit score, 4 months savings.
+- **Outcome**: **`⚠ Consider borrowing less`** with recommendation to **compare Loan Against Property (LAP)** over expensive unsecured credit; safe carry covers ₹15L while keeping EMI resilient.
 
-### 3. [Anita Devi (Home Tailoring Business, Hubballi)](./run-throughs/anita.md)
-- **Goal**: ₹1,50,000 Two-Wheeler / Personal Loan
-- **Profile**: Informal cash income ₹26k–₹30k, ₹35,000 existing loan at 30% interest, 1 bounced EMI, 0 savings.
-- **Expected Outcome**: Strong **Don't borrow yet** verdict with an actionable **Debt-First Recommendation** to clear/restructure the 30% high-cost loan and avoid debt trap.
+### 3. [Anita Devi (Informal Earner, Hubballi)](./run-throughs/anita.md)
+- **Goal**: ₹30,000 Emergency Loan
+- **Profile**: Informal cash income ₹28,000/mo, ₹11,500 existing EMIs (41% FOIR) at 36% interest, 1 bounced EMI, 0 savings.
+- **Outcome**: Strong **`✗ Don't borrow right now`** verdict with an actionable **Debt-First Recommendation** against predatory 30%+ digital lending apps.
