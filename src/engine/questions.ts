@@ -191,7 +191,7 @@ export const QUESTIONS: QuestionDefinition[] = [
     step: 1,
     placeholder: 'e.g., 5',
     affectedOutputs: ['eligibility', 'rate'],
-  } as QuestionDefinition,
+  },
 
   {
     id: 'itrFiled',

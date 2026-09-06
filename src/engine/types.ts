@@ -215,7 +215,7 @@ export interface QuestionDefinition {
   field: keyof BorrowerAnswers;
   tier: QuestionTier;
   type: QuestionType;
-  question: string;
+  question: string | ((answers: BorrowerAnswers) => string);
   subtitle?: string;
   options?: QuestionOption[];
   min?: number;

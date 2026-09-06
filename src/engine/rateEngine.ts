@@ -38,7 +38,9 @@ export function getBaseRateBand(
   product: LoanProduct,
   scoreBand: CreditScoreBand
 ): [number, number] {
-  return [...RATE_GRID[product][scoreBand]] as [number, number];
+  const grid = RATE_GRID[product] ?? RATE_GRID.personal;
+  const band = grid[scoreBand] ?? grid.unknown;
+  return [...band] as [number, number];
 }
 
 /**
@@ -153,7 +155,7 @@ export function getRateBand(
   band = [Math.min(band[0], band[1]), Math.max(band[0], band[1])];
 
   // Processing fee range for this product
-  const feeRange = PROCESSING_FEE_RANGE[product];
+  const feeRange = PROCESSING_FEE_RANGE[product] ?? [1.0, 2.5];
 
   // Calculate APR using actual cash flows (IRR method)
   const aprRange = calculateAPRRange(principal, band, tenureMonths, feeRange);

@@ -14,6 +14,7 @@ import {
   FOIR_WARNING_ZONE,
   PRODUCT_CONFIG,
   SAVINGS_THRESHOLDS,
+  type LoanProduct,
 } from './rules';
 import type { BorrowerAnswers, Verdict } from './types';
 import {
