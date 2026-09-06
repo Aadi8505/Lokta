@@ -9,6 +9,19 @@ A personal assistant that helps an Indian borrower answer four critical question
 
 ---
 
+## 📦 Challenge Deliverables (At Root)
+
+All four requested deliverables are available at the root of this repository:
+
+| # | Deliverable | Location | Description |
+|---|---|---|---|
+| **1** | **The Working App** | `src/` | Pure client-side Vite + React + TypeScript web app. No backend, no bureau pull. Setup in <2 min. |
+| **2** | **RULES.md** | [`RULES.md`](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/RULES.md) | Comprehensive table documenting every lending rule, threshold, band, and source. |
+| **3** | **Three Run-Throughs** | [`run-throughs/`](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/) | Step-by-step questions, 4 outputs, and Negotiation Cards for [Priya](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/priya.md), [Ravi](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/ravi.md), and [Anita](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/anita.md). |
+| **4** | **5-Minute Walkthrough** | [`WALKTHROUGH.md`](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/WALKTHROUGH.md) | Written walkthrough: domain reasoning, architecture, what we would build next, and what we would cut. |
+
+---
+
 ## ⚡ Quick Start (< 2 minutes)
 
 ```bash
@@ -20,9 +33,12 @@ npm run dev
 
 # Run engine test suite (67 unit tests)
 npm test
+
+# Typecheck build
+npx tsc -b
 ```
 
-App runs on `http://localhost:5173`. No backend, no login, no bureau pull needed.
+The application runs locally on `http://localhost:5173`. No backend, no login, no bureau pull required.
 
 ---
 
@@ -40,17 +56,17 @@ App runs on `http://localhost:5173`. No backend, no login, no bureau pull needed
 
 ## 🧪 Built-in Borrower Personas for Testing
 
-### 1. Priya Sharma (Salaried Tech Professional, Bengaluru)
+### 1. [Priya Sharma (Salaried Tech Professional, Bengaluru)](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/priya.md)
 - **Goal**: ₹8,00,000 Personal Loan for wedding
-- **Profile**: ₹1,15,000/mo salary, 780 CIBIL, ₹15,000 existing EMI, ₹40,000 expenses, 6 months emergency savings.
+- **Profile**: ₹1,10,000/mo salary, 780 CIBIL, ₹14,000 existing EMI, ₹40,000 expenses, 6 months emergency savings.
 - **Expected Outcome**: Clear **Borrow** verdict, ₹8L fully covered by safe carry (₹14.5L+ safe), ~10.5%–12.5% rate band.
 
-### 2. Ravi Kumar (Kirana Store Owner, Mysuru)
+### 2. [Ravi Kumar (Kirana Store Owner, Mysuru)](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/ravi.md)
 - **Goal**: ₹15,00,000 Business Loan for shop expansion
 - **Profile**: Self-employed, ₹40k–₹80k monthly income, ₹4.2L annual ITR, ₹45,00,000 property collateral available, unknown credit score, 4 months savings.
-- **Expected Outcome**: **Borrow** (or Borrow Less under unsecured alone) with recommendation to **compare secured business financing / LAP** over expensive unsecured credit; safe carry considers productive income boost.
+- **Expected Outcome**: **Borrow** with recommendation to **compare secured business financing / LAP** over expensive unsecured credit; safe carry considers productive income boost.
 
-### 3. Anita Devi (Home Tailoring Business, Hubballi)
+### 3. [Anita Devi (Home Tailoring Business, Hubballi)](file:///c:/Users/HP%20VICTUS/Desktop/AWS/Dump/Lokta/run-throughs/anita.md)
 - **Goal**: ₹1,50,000 Two-Wheeler / Personal Loan
 - **Profile**: Informal cash income ₹26k–₹30k, ₹35,000 existing loan at 30% interest, 1 bounced EMI, 0 savings.
 - **Expected Outcome**: Strong **Don't borrow yet** verdict with an actionable **Debt-First Recommendation** to clear/restructure the 30% high-cost loan and avoid debt trap.
