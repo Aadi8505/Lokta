@@ -93,28 +93,22 @@ Interactive questionnaire showing Priya's tenure refinement question with the re
 ---
 
 ### 2. Results Dashboard — Executive KPI Strip & Verdict
-Dashboard displaying Priya's assessment, Safe Carry range (₹13.1L – ₹26.0L), and rate band.
+Dashboard displaying Priya's assessment verdict ("Go ahead and borrow"), Safe Carry range (₹17.5L – ₹32.5L), and rate band (10.3% – 12.8%).
 
 ![Priya Assessment Verdict](./assets/priya-assessment-verdict.png)
 
 ---
 
 ### 3. Borrowing Capacity, Fair Rate & EMI Tenure Breakdown
-Detailed breakdown contrasting Lender sanction limits vs Safe Carry, Quoted Rate vs True APR, and the recommended 24-month tenure option.
+Detailed breakdown contrasting Lender sanction limits vs Safe Carry, Quoted Rate vs True APR, and the recommended tenure schedule under ₹82,500/mo safe ceiling.
 
 ![Priya Assessment Details](./assets/priya-assessment-details.png)
 
 ---
 
 ### 4. Branch Negotiation Card — Executive Dossier
-The one-page printable card summarizing Priya's prime profile, borrowing limits, and key questions to ask the loan officer before signing.
+The one-page printable card summarizing Priya's prime salaried profile, "Clear to borrow" verdict, critical questions to ask the loan officer, and negotiation rules.
 
-![Priya Negotiation Card Top](./assets/priya-negotiation-card-top.png)
+![Priya Negotiation Card](./assets/priya-negotiation-card.png)
 
----
-
-### 5. Fair Rate Breakdown & Branch Negotiation Rules
-Tactical rules of thumb (rejecting bundled insurance, verifying True APR, confirming zero prepayment penalties) and safe EMI ceilings.
-
-![Priya Negotiation Card Bottom](./assets/priya-negotiation-card-bottom.png)
 
