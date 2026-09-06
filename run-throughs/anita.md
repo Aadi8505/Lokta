@@ -1,7 +1,7 @@
 # Run-Through: Anita Devi
 
-**Profile**: 35, Informal Cash Earner (Delivery Rider + Home Tailoring), Hubballi  
-**Goal**: ₹1,50,000 for an Electric Scooter to double delivery runs  
+**Profile**: 35, Informal Cash Earner (Gig Delivery + Home Tailoring), Hubballi  
+**Goal**: ₹30,000 Emergency / Medical Loan  
 
 ---
 
@@ -10,52 +10,59 @@
 ### Must Questions (Tier 1)
 | # | Question | Answer Given | Engine Implication |
 |---|---|---|---|
-| 1 | What do you need the loan for? | **Vehicle (two-wheeler)** | Maps to Two-Wheeler product |
-| 2 | How much loan amount are you looking for? | **₹1,50,000** | Sets requested principal |
-| 3 | What is your employment type? | **Informal / Cash** | Lenders discount cash income by 50% |
-| 4 | What is your monthly cash income? | **₹28,000** (range ₹26k – ₹30k) | Lenders consider only ₹14,000/mo |
-| 5 | What is your total monthly existing EMI outflow? | **₹4,000** | Consumes ~28% of lender-recognized income |
-| 6 | What are your monthly household expenses? | **₹20,000** | High expense-to-income ratio with 2 kids & unemployed husband |
-| 7 | What is your age? | **35** | Product tenure not age-restricted |
-| 8 | What is your credit score? | **Don't know / Unknown** | Unverified credit profile |
+| 1 | What do you need the loan for? | **Medical / Emergency** | Maps to Personal / Emergency Loan product |
+| 2 | How much loan amount are you looking for? | **₹30,000** | Sets requested principal |
+| 3 | What is your employment type? | **Informal / Gig** | Lenders heavily discount informal income (50% factor) |
+| 4 | What is your monthly cash income? | **₹28,000** (range ₹26,000 – ₹30,000) | Actual cash base for living; lender recognizes ₹14,000/mo |
+| 5 | What is your total monthly existing EMI outflow? | **₹11,500** | Existing app debts; consumes 41% of net income (82% of lender income) |
+| 6 | What are your monthly household expenses? | **₹15,00,0** | Household expenses (food, utilities, rent, family upkeep) |
+| 7 | What is your age? | **35** | Well within product tenure limits |
+| 8 | What is your credit score? | **Don't know / Unknown** | Unverified credit score maps to wider benchmark band |
 
 ### Additional Questions (Tier 2)
 | # | Question | Answer Given | Engine Implication |
 |---|---|---|---|
-| 9 | Do you have high-cost loans (instant apps/moneylenders)? | **Yes (3 app loans, ₹35,000 outstanding)** | **Triggers High-Cost Debt evaluation** |
-| 10 | What is the interest rate on this existing debt? | **30%+ per annum** | Flags predatory debt trap |
-| 11 | Have you had any EMI bounces in the last 12 months? | **Yes (1 bounce last month)** | **Signals severe cash-flow distress** |
-| 12 | How many months of expenses do you have in savings? | **0 months** | Zero financial buffer |
-| 13 | How many dependents do you support? | **3 (2 children + unemployed husband)** | High household expenditure pressure |
+| 9 | What is your income range — worst to best month? | **₹26,000 to ₹30,000** | Captures monthly income variance for stress-testing |
+| 10 | How stable is your income month to month? | **Seasonal / Volatile** | Triggers higher buffer requirement |
+| 11 | How many months of expenses do you have in savings? | **0 months** | Red-flag trigger: no financial safety cushion |
+| 12 | Have you already received a loan offer from a lender? | **Yes** | Triggers lender rate gouging comparison |
+| 13 | What interest rate were you offered? | **30.0%** | Predatory loan app offer (+16.5% above fair band) |
+| 14 | What is the interest rate on existing high-cost loans? | **36.0%** | Extreme high-cost debt trap on ₹25,000 balance |
 
 ---
 
 ## 2. Four Outputs Produced
 
 ### O1: Verdict
-- **Decision**: **`Don't borrow yet` (Strong negative outcome)**
-- **Reason**: *"You have existing debt at 30%+ with a recent EMI bounce and zero emergency savings. Taking on a new loan of ₹1,50,000 would deepen financial distress."*
-- **Debt-First Recommendation**:
-  - **Priority 1**: Pay off or restructure the ₹35,000 instant app debt immediately before taking new loans.
-  - **Priority 2**: Look into non-predatory options: Self-Help Group (SHG) micro-credit, an employer/delivery platform fuel advance, or a gold loan (if any gold jewelry is available).
-  - **Path Forward**: Once the 30% debt is eliminated and repayments stabilize for 3 months, borrowing capacity will double and interest rates will drop by half.
+- **Decision**: **`Don't Borrow` (High Confidence)**
+- **Heading**: **`✗ Don't borrow right now`**
+- **Reason**: *"With less than 1 month of emergency savings, no collateral, and 41% of income already committed to EMIs, a new loan creates unacceptable risk."*
+- **Supporting Recommendation**:
+  - *"Build up at least 2-3 months of emergency savings before borrowing."*
+  - Prioritize clearing or restructuring existing ₹11,500/mo app loan obligations.
+  - High confidence rating with 6 of 8 relevant inputs provided.
 
 ### O2: Maximum Amount
-- **Lender Likely Sanction**: **₹45,000 – ₹65,000** (Heavily restricted by informal discount & existing EMI)
-- **Borrower Safe Carry**: **₹0** (Under current cash-flow with high expenses, no additional EMI is safe)
-- **Recommendation**: **Do not take a commercial two-wheeler loan of ₹1,50,000 right now**.
+- **Lender Likely Sanction**: **₹0** (41% existing FOIR on discounted informal income leaves zero lender capacity)
+- **Borrower Safe Carry**: **₹0** (With ₹11,500 existing EMIs + ₹15,000 essential expenses, monthly surplus is only ₹1,500)
+- **Status**: Below requested ₹30,000. Under current cash-flows, taking on any additional debt will precipitate default.
 
 ### O3: Fair Interest Rate & True APR
-- **Market Rate Quoted by Subprime Lenders**: **24.0% – 30.0%**
-- **True APR with Documentation Fees**: **28.5% – 35.0%**
-- **Diagnosis**: A subprime lender or two-wheeler NBFC will charge Anita predatory rates that almost guarantee further default.
+- **Fair Quoted Rate (Nominal)**: **12.0% – 15.0%**
+- **True APR (All-in Cost)**: **12.9% – 17.9%** (incorporating standard processing fees)
+- **Lender Offer Comparison**:
+  - Offeree rate of **30.0%** is **+16.5% above the fair midpoint (13.5%)**.
+  - Anita is being severely overcharged by digital lending apps.
+  - Negotiating to fair terms (or switching to an SHG/employer advance at 13.5%) saves ₹9,216 over 36 months.
 
 ### O4: Safe EMI Ceiling & Stress Test
-- **Safe EMI Ceiling**: **₹0 / month** (Until existing high-cost EMIs are retired)
-- **Projected New EMI**: ~₹5,800/mo (for ₹1.5L at 24% for 36 months)
-- **Stress Test Outcome**:
-  - **Projected Total Obligations**: Existing ₹4k + New ₹5.8k = ₹9.8k/mo.
-  - On an informal base of ₹28,000 with ₹20,000 expenses, this leaves only ₹2,200 for food, school fees, and medical emergencies. Any small emergency guarantees default.
+- **Safe EMI Ceiling**: **₹0 / month** (Classified as *Vulnerable to shocks*)
+- **Stress Analysis**:
+  - Net monthly income: ₹28,000
+  - Existing debt outflow: -₹11,500
+  - Stated household expenses: -₹15,000
+  - Available cushion: ₹1,500 (completely wiped out by any routine medical or vehicle repair expense).
+  - Any new EMI makes household cash-flow negative.
 
 ---
 
@@ -63,25 +70,29 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    LOKTA NEGOTIATION CARD                       │
-│  Borrower: Anita Devi (Informal Earner · Hubballi)              │
+│                    BORROWER NEGOTIATION CARD                    │
+│  Generated 6 Sept 2026 · Independent Borrower Assessment        │
+│  Borrower: Anita Devi (Informal/Gig · Credit Score: Not known)  │
 ├─────────────────────────────────────────────────────────────────┤
-│  VERDICT: NOT RECOMMENDED TO BORROW AT THIS TIME                │
-│  ACTIONABLE FINANCIAL FIRST-AID REQUIRED                        │
+│  ASSESSMENT VERDICT: ✗ Not recommended right now                │
+│  With less than 1 month of emergency savings, no collateral,   │
+│  and 41% of income already committed to EMIs, a new loan        │
+│  creates unacceptable risk.                                     │
 ├─────────────────────────────────────────────────────────────────┤
-│  CRITICAL WARNING:                                              │
-│  You are paying 30%+ on ₹35,000 app loans with a recent bounce. │
-│  Taking a new ₹1.5L vehicle loan creates extreme risk of        │
-│  vehicle repossession and compounding debt.                     │
+│  BORROWING CAPACITY:                                            │
+│  Safe to carry: ₹0   |   Lender may approve: ₹0                 │
+│  Requested: ₹30,000  |   Eligible: ₹0                           │
 ├─────────────────────────────────────────────────────────────────┤
-│  IMMEDIATE ACTION PLAN:                                         │
-│  1. Do NOT sign up for another app loan or subprime NBFC loan.  │
-│  2. Direct all surplus to clearing the ₹35,000 high-cost loan.  │
-│  3. For the scooter, explore:                                   │
-│     - Electric scooter EV lease/rental models (daily rent).     │
-│     - Self-Help Group (SHG) loan at 12% annual rate.            │
-│     - Gold loan against household jewelry (cheapest secured).   │
-│  4. Re-assess in 90 days once the app loans are cleared.        │
+│  LENDER OFFER VS FAIR RANGE:                                    │
+│  The offered rate of 30% is 16.5% above the midpoint of your    │
+│  fair range (12–15%). You're likely overpaying. Negotiating to  │
+│  13.5% could save you ₹9,216 over 36 months.                    │
+├─────────────────────────────────────────────────────────────────┤
+│  CRITICAL QUESTIONS TO ASK BEFORE SIGNING:                      │
+│  1. What is the total APR including all fees? (Not just rate)   │
+│  2. Is the rate fixed or floating? What is reset frequency?     │
+│  3. Is there a prepayment or foreclosure penalty?               │
+│  4. What is the processing fee? (Fair range: 0.5–1.5%)          │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -114,6 +125,3 @@ Refining questions capturing worst-to-best monthly cash flow variations to stres
 Capturing income predictability (Stable, Seasonal, Volatile) to dynamically calibrate emergency buffer requirements.
 
 ![Income Stability Question](./assets/anita-question-stability.png)
-
-
-
