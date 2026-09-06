@@ -89,7 +89,29 @@
 
 ## 4. UI Screenshots
 
-*(Screenshots can be added here)*
-- `[Screenshot 1: Informal Earner Question Flow]`
-- `[Screenshot 2: Don't Borrow Verdict & Actionable Guidance]`
-- `[Screenshot 3: Financial First-Aid Negotiation Card]`
+### 1. Results Dashboard — Verdict & Safe Carry Ceiling
+Anita's financial assessment produces a clear **"Don't borrow right now"** verdict due to zero emergency savings and 41% existing EMI obligations. Her safe carry ceiling is correctly calculated as ₹0.
+
+![Anita Assessment Results Dashboard](./assets/anita-results-dashboard.png)
+
+---
+
+### 2. Borrower Negotiation Card — Branch Dossier & First-Aid Plan
+The one-page branch dossier highlighting the predatory 30% lender offer (+16.5% above fair range) and four critical questions to ask before signing.
+
+![Anita Borrower Negotiation Card](./assets/anita-negotiation-card.png)
+
+---
+
+### 3. Questionnaire Flow — Income Range Capture
+Refining questions capturing worst-to-best monthly cash flow variations to stress-test irregular income.
+
+![Income Range Question](./assets/anita-question-income-range.png)
+
+---
+
+### 4. Questionnaire Flow — Income Stability
+Capturing income predictability (Stable, Seasonal, Volatile) to dynamically calibrate emergency buffer requirements.
+
+![Income Stability Question](./assets/anita-question-stability.png)
+
