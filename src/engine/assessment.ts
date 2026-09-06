@@ -6,7 +6,7 @@
  * plus Negotiation Card and optional Lender Comparison.
  */
 
-import { PRODUCT_CONFIG } from './rules';
+import { PRODUCT_CONFIG, FOIR_HARD_CEILING, type LoanProduct } from './rules';
 import type {
   BorrowerAnswers,
   FullAssessment,
@@ -19,8 +19,9 @@ import { getRateBand, scoreToBand, scoreBandLabel } from './rateEngine';
 import {
   tenureTradeoff,
   stressTest,
+  calculateEMI,
 } from './emiCalculator';
-import { getSafeEmiCeiling, getStressedSafeEmi } from './affordability';
+import { getSafeEmiCeiling, getStressedSafeEmi, getEffectiveIncome, calculateFOIR } from './affordability';
 import { calculateConfidence } from './confidence';
 import { compareLenderOffer } from './lenderComparison';
 
@@ -32,9 +33,39 @@ export function runAssessment(answers: BorrowerAnswers): FullAssessment {
 
   // Determine primary product
   const products = getApplicableProducts(answers);
-  const primaryProduct = products[0];
-  const config = PRODUCT_CONFIG[primaryProduct];
   const amountWanted = answers.amountWanted ?? 0;
+
+  let primaryProduct = answers.preferredProduct && products.includes(answers.preferredProduct)
+    ? answers.preferredProduct
+    : products[0];
+
+  // If unsecured product exceeds FOIR hard ceiling but a secured option is viable (e.g. LAP with property collateral),
+  // switch primary product to the viable option so calculations and negotiation card reflect it
+  if (!answers.preferredProduct && products.length > 1) {
+    const { actualIncome } = getEffectiveIncome(answers);
+    const existingEmis = answers.existingEmis ?? 0;
+    const evalEmi = (prod: LoanProduct) => {
+      const cfg = PRODUCT_CONFIG[prod];
+      const tenure = cfg.typicalTenureMonths[Math.floor(cfg.typicalTenureMonths.length / 2)];
+      const rb = getRateBand(answers, prod, tenure, amountWanted);
+      const mr = (rb.nominalRate[0] + rb.nominalRate[1]) / 2;
+      return calculateEMI(amountWanted, mr, tenure);
+    };
+
+    const { projectedFoir: defaultFoir } = calculateFOIR(actualIncome, existingEmis, evalEmi(primaryProduct));
+    if (defaultFoir > FOIR_HARD_CEILING) {
+      for (const alt of products) {
+        if (alt === primaryProduct) continue;
+        const { projectedFoir: altFoir } = calculateFOIR(actualIncome, existingEmis, evalEmi(alt));
+        if (altFoir <= FOIR_HARD_CEILING) {
+          primaryProduct = alt;
+          break;
+        }
+      }
+    }
+  }
+
+  const config = PRODUCT_CONFIG[primaryProduct];
 
   // Pick a reasonable tenure for calculations
   const typicalTenure = config.typicalTenureMonths[

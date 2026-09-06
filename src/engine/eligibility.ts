@@ -209,8 +209,10 @@ export function calculateEligibility(answers: BorrowerAnswers): Eligibility {
     };
   });
 
-  // Overall amounts (from primary product or best option)
-  const primary = productRecs.find(r => r.eligible) ?? productRecs[0];
+  // Overall amounts (from primary product or best option that safely covers the amount)
+  const primary = productRecs.find(r => r.eligible && r.safeAmount[1] >= amountWanted)
+    ?? productRecs.find(r => r.eligible)
+    ?? productRecs[0];
 
   // Apply confidence widening
   const conf = calculateConfidence(answers, 'eligibility');
