@@ -56,17 +56,17 @@ The application runs locally on `http://localhost:5173`. No backend, no login, n
 
 ## 🧪 Verified Borrower Personas
 
-### 1. [Priya Sharma (Salaried Tech Professional, Bengaluru)](./run-throughs/priya.md)
+### 1. [Priya (Salaried Tech Professional, Bengaluru)](./run-throughs/priya.md)
 - **Goal**: ₹8,00,000 Home Renovation / Personal Loan
 - **Profile**: ₹1,50,000/mo salary, 760+ CIBIL, ₹15,000 existing EMI, ₹45,000 expenses, 6 months emergency savings.
 - **Outcome**: Clear **`✓ Go ahead and borrow`** verdict, ₹8L fully covered by safe carry (₹17.5L – ₹32.5L), 10.3%–12.8% prime rate band.
 
-### 2. [Ravi Kumar (Kirana Store Owner, Mysuru)](./run-throughs/ravi.md)
+### 2. [Ravi (Kirana Store Owner, Mysuru)](./run-throughs/ravi.md)
 - **Goal**: ₹15,00,000 Business Loan for shop expansion
 - **Profile**: Self-employed, ₹60,000/mo stated income, ₹4.2L annual ITR, ₹45,00,000 property collateral, unknown credit score, 4 months savings.
 - **Outcome**: **`⚠ Consider borrowing less`** with recommendation to **compare Loan Against Property (LAP)** over expensive unsecured credit; safe carry covers ₹15L while keeping EMI resilient.
 
-### 3. [Anita Devi (Informal Earner, Hubballi)](./run-throughs/anita.md)
+### 3. [Anita (Informal Earner, Hubballi)](./run-throughs/anita.md)
 - **Goal**: ₹30,000 Emergency Loan
 - **Profile**: Informal cash income ₹28,000/mo, ₹11,500 existing EMIs (41% FOIR) at 36% interest, 1 bounced EMI, 0 savings.
 - **Outcome**: Strong **`✗ Don't borrow right now`** verdict with an actionable **Debt-First Recommendation** against predatory 30%+ digital lending apps.

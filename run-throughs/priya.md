@@ -1,4 +1,4 @@
-# Run-Through: Priya Sharma
+# Run-Through: Priya
 
 **Profile**: 29, Salaried Tech Professional, Bengaluru  
 **Goal**: ₹8,00,000 Loan (Home Renovation / Personal Loan)  
@@ -71,7 +71,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                    BORROWER NEGOTIATION CARD                    │
 │  Generated 6 Sept 2026 · Independent Borrower Assessment        │
-│  Borrower: Priya Sharma (Salaried · Credit Score: Excellent)    │
+│  Borrower: Priya (Salaried · Credit Score: Excellent)           │
 ├─────────────────────────────────────────────────────────────────┤
 │  ASSESSMENT VERDICT: ✓ Clear to borrow                          │
 │  Your total EMI stays at 28% of income — well within            │

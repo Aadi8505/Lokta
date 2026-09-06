@@ -1,4 +1,4 @@
-# Run-Through: Ravi Kumar
+# Run-Through: Ravi
 
 **Profile**: 42, Kirana Store Owner, Mysuru  
 **Goal**: ₹15,00,000 for shop expansion (inventory stock line + delivery vehicle)  
@@ -71,7 +71,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                    BORROWER NEGOTIATION CARD                    │
 │  Generated 6 Sept 2026 · Independent Borrower Assessment        │
-│  Borrower: Ravi Kumar (Self-employed · Age: 42 · Score: Unknown)│
+│  Borrower: Ravi (Self-employed · Age: 42 · Score: Unknown)      │
 ├─────────────────────────────────────────────────────────────────┤
 │  ASSESSMENT VERDICT: ⚠ Consider borrowing less                  │
 │  If your income drops 20%, this EMI becomes unaffordable.       │

@@ -1,4 +1,4 @@
-# Run-Through: Anita Devi
+# Run-Through: Anita
 
 **Profile**: 35, Informal Cash Earner (Gig Delivery + Home Tailoring), Hubballi  
 **Goal**: ₹30,000 Emergency / Medical Loan  
@@ -72,7 +72,7 @@
 ┌─────────────────────────────────────────────────────────────────┐
 │                    BORROWER NEGOTIATION CARD                    │
 │  Generated 6 Sept 2026 · Independent Borrower Assessment        │
-│  Borrower: Anita Devi (Informal/Gig · Credit Score: Not known)  │
+│  Borrower: Anita (Informal/Gig · Credit Score: Not known)       │
 ├─────────────────────────────────────────────────────────────────┤
 │  ASSESSMENT VERDICT: ✗ Not recommended right now                │
 │  With less than 1 month of emergency savings, no collateral,   │
