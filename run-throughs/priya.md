@@ -7,24 +7,32 @@
 
 ## 1. Questions Asked & Answers Given
 
-### Must Questions (Tier 1)
-| # | Question | Answer Given | Engine Implication |
+### Must Questions (Tier 1: Core Financial Profile)
+| # | Question Prompt | Answer Given | Engine Implication |
 |---|---|---|---|
 | 1 | What do you need the loan for? | **Wedding / Family event** | Maps to Personal Loan product |
-| 2 | How much loan amount are you looking for? | **₹8,00,000** | Sets requested principal |
-| 3 | What is your employment type? | **Salaried** | Full income recognized (1.0 factor) |
-| 4 | What is your monthly take-home salary? | **₹1,10,000** | Baseline for FOIR calculation |
+| 2 | How much do you want to borrow? | **₹8,00,000** | Sets requested principal |
+| 3 | What type of income do you earn? | **Salaried** | Full income recognized (1.0 factor, no haircut) |
+| 4 | What is your net monthly income? | **₹1,10,000** | Baseline for FOIR calculation |
 | 5 | What is your total monthly existing EMI outflow? | **₹14,000** | Existing car loan obligation (12.7% baseline FOIR) |
-| 6 | What are your monthly household expenses? | **₹40,000** | Used for safe carry calculation (includes ₹28k rent) |
-| 7 | What is your age? | **29** | Max tenure available up to retirement (31 years left) |
-| 8 | What is your credit score? | **780** | Prime tier (750+), unlocks lowest base rate band |
+| 6 | What are your monthly household expenses? | **₹40,000** | Used for safe carry calculation (rent ₹28k + living) |
+| 7 | How old are you? | **29** | Max tenure available up to retirement (31 years left) |
+| 8 | What is your credit score (CIBIL)? | **780** | Prime tier (750+), unlocks lowest base rate band |
 
-### Additional Questions (Tier 2)
-| # | Question | Answer Given | Engine Implication |
+### Additional Questions (Tier 2: Range Refinement)
+*(Note: Every question below has a **"Skip this question →"** button. You can also click **"Skip remaining & Show Results →"** at any point!)*
+
+| # | Question Prompt | Answer Given / Action | Engine Implication |
 |---|---|---|---|
-| 9 | How many years have you been in your current job? | **5 years** | Tenure stability benefit (-50 bps rate discount) |
-| 10 | How many months of expenses do you have in savings? | **6 months** | Strong emergency savings, reduces emergency buffer to 5% |
-| 11 | Have you had any EMI bounces in the last 12 months? | **No (0 bounces)** | Clean repayment track record, no bounce penalty |
+| 9 | How many years have you been in your current job? | **5** | Tenure stability benefit (-50 bps rate discount) |
+| 10 | Do you own any property or gold you could offer as collateral? | **No** (or *Skip*) | Unsecured personal loan; no collateral pledged |
+| 11 | How many EMI payments have bounced in the last 12 months? | **0** | Clean repayment track record, zero bounce penalty |
+| 12 | What is the interest rate on your most expensive existing loan? | **8.5** (Car loan) | Prime car loan rate; does not trigger high-cost debt warning |
+| 13 | How many months of expenses could you cover from savings? | **6** | Exceptional emergency buffer, drops buffer requirement to 5% |
+| 14 | How many dependents do you support? | **0** (or *Skip*) | No dependent load pressure on cash flow |
+| 15 | Can someone co-apply with you? | **No** (or *Skip*) | Single applicant assessment |
+| 16 | Do you have any large expenses coming up in next 12 months? | **No** (or *Skip*) | Uninterrupted monthly debt servicing surplus |
+| 17 | Have you already received a loan offer from a lender? | **No** (or *Skip*) | Generates baseline market negotiation range |
 
 ---
 

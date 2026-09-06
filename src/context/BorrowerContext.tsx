@@ -24,6 +24,7 @@ export type AppScreen =
 interface BorrowerState {
   screen: AppScreen;
   answers: BorrowerAnswers;
+  skippedQuestions: string[];
   assessment: FullAssessment | null;
   questionIndex: number;
   animationDirection: 'forward' | 'backward';
@@ -32,6 +33,7 @@ interface BorrowerState {
 const initialState: BorrowerState = {
   screen: 'welcome',
   answers: {},
+  skippedQuestions: [],
   assessment: null,
   questionIndex: 0,
   animationDirection: 'forward',
@@ -42,7 +44,7 @@ const initialState: BorrowerState = {
 type Action =
   | { type: 'SET_SCREEN'; screen: AppScreen }
   | { type: 'SET_ANSWER'; field: string; value: unknown }
-  | { type: 'SKIP_QUESTION' }
+  | { type: 'SKIP_QUESTION'; field: string }
   | { type: 'SET_ASSESSMENT'; assessment: FullAssessment }
   | { type: 'LOAD_PROFILE'; answers: BorrowerAnswers }
   | { type: 'NEXT_QUESTION' }
@@ -62,7 +64,12 @@ function reducer(state: BorrowerState, action: Action): BorrowerState {
       };
 
     case 'SKIP_QUESTION':
-      return state;
+      return {
+        ...state,
+        skippedQuestions: state.skippedQuestions.includes(action.field)
+          ? state.skippedQuestions
+          : [...state.skippedQuestions, action.field],
+      };
 
     case 'SET_ASSESSMENT':
       return { ...state, assessment: action.assessment };

@@ -96,8 +96,9 @@ export function QuestionFlow({ tier }: Props) {
   const visibleQuestions = getVisibleQuestions(answers, tier);
   const progress = getProgress(answers, tier);
 
-  // Find the next unanswered question
+  // Find the next unanswered question that hasn't been skipped
   const currentIndex = visibleQuestions.findIndex(q => {
+    if (state.skippedQuestions.includes(q.field)) return false;
     const val = (answers as Record<string, unknown>)[q.field];
     return val === undefined || val === null;
   });
@@ -128,6 +129,8 @@ export function QuestionFlow({ tier }: Props) {
     text: 'This parameter helps calibrate your safe debt ceiling against RBI FOIR guidelines and lender credit risk models.',
   };
 
+  const answeredOrSkipped = progress.answered + state.skippedQuestions.filter(f => visibleQuestions.some(q => q.field === f)).length;
+
   return (
     <div className="questionnaire-wrapper">
       <div className="questionnaire-card">
@@ -138,14 +141,14 @@ export function QuestionFlow({ tier }: Props) {
               {tier === 'must' ? 'STEP 1: CORE PROFILE' : 'STEP 2: RANGE REFINEMENT'}
             </span>
             <span className="questionnaire-card__counter">
-              Question {progress.answered + 1} of {progress.total}
+              Question {Math.min(answeredOrSkipped + 1, progress.total)} of {progress.total}
             </span>
           </div>
 
           <div className="questionnaire-card__progress-track">
             <div
               className="questionnaire-card__progress-fill"
-              style={{ width: `${(progress.answered / Math.max(progress.total, 1)) * 100}%` }}
+              style={{ width: `${(answeredOrSkipped / Math.max(progress.total, 1)) * 100}%` }}
             />
           </div>
         </div>
@@ -217,33 +220,31 @@ export function QuestionFlow({ tier }: Props) {
             {tier === 'additional' && (
               <button
                 className="btn btn--secondary"
+                id="finish-to-results-btn"
                 onClick={() => {
                   const assessment = runAssessment(answers);
                   dispatch({ type: 'SET_ASSESSMENT', assessment });
                   dispatch({ type: 'SET_SCREEN', screen: 'results' });
                 }}
               >
-                Skip to Results Dashboard →
+                Skip remaining & Show Results →
               </button>
             )}
           </div>
 
           <div className="questionnaire-card__footer-right">
-            {question.skipConsequence && (
-              <button
-                className="btn btn--ghost"
-                onClick={() => {
-                  if (question.field === 'creditScore') {
-                    dispatch({ type: 'SET_ANSWER', field: question.field as string, value: 'unknown' });
-                  } else {
-                    dispatch({ type: 'SET_ANSWER', field: question.field as string, value: undefined });
-                    dispatch({ type: 'SKIP_QUESTION' });
-                  }
-                }}
-              >
-                I don't know → Skip
-              </button>
-            )}
+            <button
+              className="btn btn--ghost"
+              id="skip-question-btn"
+              onClick={() => {
+                if (question.field === 'creditScore') {
+                  dispatch({ type: 'SET_ANSWER', field: 'creditScore', value: 'unknown' });
+                }
+                dispatch({ type: 'SKIP_QUESTION', field: question.field as string });
+              }}
+            >
+              {question.skipConsequence ? "I don't know → Skip" : "Skip this question →"}
+            </button>
           </div>
         </div>
       </div>
